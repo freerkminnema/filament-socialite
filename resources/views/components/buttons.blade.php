@@ -13,7 +13,7 @@
                 outlined="true"
                 :icon="$provider['icon'] ?? null"
                 tag="a"
-                :href="route('socialite.oauth.redirect', $key)"
+                :href="route('filament.'.$panelId.'.socialite.oauth.redirect', $key)"
             >
                 {{ $provider['label'] }}
             </x-filament::button>
