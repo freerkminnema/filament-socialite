@@ -3,12 +3,12 @@
 namespace DutchCodingCompany\FilamentSocialite;
 
 use DutchCodingCompany\FilamentSocialite\Http\Livewire\Buttons;
-use Filament\PluginServiceProvider;
 use Illuminate\Support\Facades\Blade;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentSocialiteServiceProvider extends PluginServiceProvider
+class FilamentSocialiteServiceProvider extends PackageServiceProvider
 {
     public function packageRegistered(): void
     {
