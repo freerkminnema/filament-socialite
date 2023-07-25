@@ -3,6 +3,7 @@
 namespace DutchCodingCompany\FilamentSocialite\View\Components;
 
 use DutchCodingCompany\FilamentSocialite\Facades\FilamentSocialite;
+use Filament\Facades\Filament;
 use Illuminate\View\Component;
 
 class Buttons extends Component
@@ -31,6 +32,8 @@ class Buttons extends Component
      */
     public function render()
     {
-        return view('filament-socialite::components.buttons');
+        return view('filament-socialite::components.buttons', [
+            'panelId' => Filament::getCurrentPanel()->getId(),
+        ]);
     }
 }
