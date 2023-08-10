@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Route;
 Route::name('filament.')
     ->group(function () {
         foreach (Filament::getPanels() as $panel) {
-            foreach ($panel->getDomains() as $domain) {
+            $domains = $panel->getDomains();
+            $domains = empty($domains) ? [null] : $domains;
+            foreach ($domains as $domain) {
                 Route::domain($domain)
                     ->middleware($panel->getMiddleware())
                     ->name("{$panel->getId()}.socialite.")
